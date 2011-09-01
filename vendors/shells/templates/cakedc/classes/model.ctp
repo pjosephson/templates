@@ -308,8 +308,7 @@ endif;
 		if (empty($<?php echo $singularName;?>)) {
 			throw new OutOfBoundsException(__('Invalid <?php echo $singularHumanName;?>', true));
 		}
-		$this->set($<?php echo $singularName;?>);
-
+		
 		if (!empty($data)) {
 			$this->set($data);
 			$result = $this->save(null, true);
@@ -320,6 +319,7 @@ endif;
 				return $data;
 			}
 		} else {
+    		        $this->set($<?php echo $singularName;?>);
 			return $<?php echo $singularName;?>;
 		}
 	}
